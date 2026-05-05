@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+</head>
+<body>
+<a href="/users/">User List</a> |
+<a href="/add/">Add User</a>
+<hr>
+
+<h1>Add User</h1>
+
+{% if success %}
+<p style="color: green;">User added successfully!</p>
+{% endif %}
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name: <input type="text" name="name"><br><br>
+    Unique ID: <input type="text" name="uniqueID"><br><br>
+    DOB: <input type="date" name="dob"><br><br>
+
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

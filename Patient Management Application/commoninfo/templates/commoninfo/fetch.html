@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch User</title>
+</head>
+
+<body>
+
+<a href="/users/">User List</a> |
+<a href="/add/">Add User</a> |
+<a href="/fetch/">Search User</a>
+<hr>
+
+<h2>Search User</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    Enter Unique ID:
+    <input type="text" name="uniqueID">
+    <button type="submit">Search</button>
+</form>
+
+{% if user %}
+    <h3>Result:</h3>
+    Name: {{ user.name }} <br>
+    ID: {{ user.uniqueID }}
+{% endif %}
+
+</body>
+</html>

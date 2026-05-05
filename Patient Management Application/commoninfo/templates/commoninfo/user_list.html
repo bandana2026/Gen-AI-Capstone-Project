@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User List</title>
+        
+    </head>
+    <body>
+        <a href="/users/">User List</a> |
+        <a href="/add/">Add User</a>
+        <hr>
+        
+        <h1>User List</h1>
+        <ul>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                </tr>
+
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.uniqueID }}</td>
+            </tr>
+            
+            {% endfor %}
+        </table>
+        </ul>
+    </body>
+</html>
